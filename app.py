@@ -518,6 +518,7 @@ joblib==1.3.2
 opencv-python==4.8.1.78
 tensorflow==2.15.0
 """)
+wsgi_app = WSGIMiddleware(app)
 
 # Create a Procfile for Render - also using utf-8 encoding
 with open("Procfile", "w", encoding="utf-8") as f:
