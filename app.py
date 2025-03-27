@@ -517,11 +517,16 @@ scikit-learn==1.3.1
 joblib==1.3.2
 opencv-python==4.8.1.78
 tensorflow==2.15.0
+deepface==0.0.79
 """)
 
 # Create a Procfile for Render - also using utf-8 encoding
 with open("Procfile", "w", encoding="utf-8") as f:
     f.write("web: uvicorn main:app --host=0.0.0.0 --port=${PORT:-8000}")
+
+# Create runtime.txt for Python version specification
+with open("runtime.txt", "w") as f:
+    f.write("python-3.10.12")
 
 if __name__ == "__main__":
     uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True)
